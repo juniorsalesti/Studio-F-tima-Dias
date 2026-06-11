@@ -1,0 +1,6 @@
+{
+  "name": "Studio Fátima Dias",
+  "description": "Landing page premium de alta conversão para o Studio Fátima Dias em Campinas/SP, especialista em depilação feminina e estética capilar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

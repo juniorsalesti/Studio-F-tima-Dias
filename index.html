@@ -1,0 +1,2204 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Fátima Dias · Depilação & Estética Capilar em Campinas</title>
+    
+    <!-- Meta Tags para SEO e Redes Sociais -->
+    <meta name="description" content="Especialista em depilação feminina há mais de 20 anos e estética capilar em Campinas/SP. Venha vivenciar um atendimento exclusivo e personalizado." />
+    <meta property="og:title" content="Studio Fátima Dias · Depilação & Cabelo em Campinas" />
+    <meta property="og:description" content="Especialista em depilação feminina com mais de duas décadas de experiência e salão completo no Jardim Pauliceia." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500&family=Syne:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+      /* --- CUSTOM PROPERTIES --- */
+      :root {
+        --cor-fundo: #FCFAF8;
+        --cor-superficie: #FFFFFF;
+        --cor-acento: #AB8F6D;
+        --cor-acento-soft: #D3C3B1;
+        --cor-texto: #1F1916;
+        --cor-muted: #7A726B;
+        --cor-borda: #EFECE8;
+        
+        --font-display: 'Cormorant Garamond', serif;
+        --font-body: 'DM Sans', sans-serif;
+        --font-accent: 'Syne', sans-serif;
+      }
+
+      /* --- RESET & BASIC STYLES --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        font-family: var(--font-body);
+        font-weight: 300;
+        overflow-x: hidden;
+      }
+
+      body {
+        cursor: none; /* Custom cursor fallback. Will be responsive */
+        background-color: var(--cor-fundo);
+        line-height: 1.6;
+      }
+
+      a, button {
+        cursor: none;
+      }
+
+      /* --- RESPONSIVE TYPOGRAPHY & DESIGN --- */
+      h1, h2, h3, h4 {
+        font-family: var(--font-display);
+        color: var(--cor-texto);
+      }
+
+      .eyebrow {
+        font-family: var(--font-accent);
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--cor-acento);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      /* --- WORKSPACE CONTAINER --- */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* --- LUXURY BUTTONS --- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.85rem 2rem;
+        font-family: var(--font-accent);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn-primary {
+        background-color: var(--cor-acento);
+        color: var(--cor-fundo);
+        border: 1px solid var(--cor-acento);
+      }
+
+      .btn-primary:hover {
+        background-color: transparent;
+        color: var(--cor-acento);
+        box-shadow: 0 0 20px rgba(171, 143, 109, 0.25);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--cor-texto);
+        border: 1px solid var(--cor-borda);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--cor-acento);
+        color: var(--cor-acento);
+        box-shadow: 0 0 15px rgba(171, 143, 109, 0.15);
+      }
+
+      .btn-nav {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.7rem;
+        border: 1px solid var(--cor-acento);
+        color: var(--cor-acento);
+      }
+
+      .btn-nav:hover {
+        background-color: var(--cor-acento);
+        color: var(--cor-fundo);
+      }
+
+      /* --- SCROLL REVEAL ENGINE --- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* --- ASSINATURA VISUAL (GOLDEN UNDERLINE) --- */
+      .reveal-underline {
+        position: relative;
+        display: inline-block;
+      }
+
+      .reveal-underline::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cor-acento), var(--cor-acento-soft));
+        transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .reveal-underline.active::after {
+        width: 100%;
+      }
+
+      /* --- NAVBAR --- */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.4s ease;
+        border-bottom: 1px solid transparent;
+      }
+
+      header.scrolled {
+        background-color: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(171, 143, 109, 0.15);
+        padding: 0.85rem 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 0;
+        transition: padding 0.4s ease;
+      }
+
+      header.scrolled .nav-container {
+        padding: 0.5rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: var(--cor-texto);
+      }
+
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        font-weight: 600;
+        font-style: italic;
+        letter-spacing: -0.01em;
+      }
+
+      .logo-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--cor-acento);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        list-style: none;
+      }
+
+      .nav-link {
+        font-family: var(--font-accent);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--cor-texto);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        position: relative;
+        padding: 0.25rem 0;
+      }
+
+      .nav-link:hover {
+        color: var(--cor-acento);
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--cor-acento);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Mobile menu button */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--cor-texto);
+        padding: 0.5rem;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .mobile-toggle:active {
+        background-color: rgba(171, 143, 109, 0.08);
+        transform: scale(0.95);
+      }
+
+      /* --- HERO SECTION --- */
+      #hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        background-color: var(--cor-fundo);
+        background-image: linear-gradient(to right, rgba(252, 250, 248, 0.96) 25%, rgba(252, 250, 248, 0.85) 55%, rgba(252, 250, 248, 0.2) 100%), url('/src/assets/images/beauty_studio_bg_1781205138416.jpg');
+        background-size: cover;
+        background-position: right center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+
+      #hero-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 750px;
+      }
+
+      .hero-headline {
+        font-size: clamp(2.2rem, 8vw, 5.8rem);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+      }
+
+      .hero-headline italic-word {
+        font-style: italic;
+        color: var(--cor-acento);
+        font-weight: 600;
+      }
+
+      .hero-description {
+        font-family: var(--font-body);
+        font-weight: 300;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--cor-muted);
+        max-width: 600px;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* Google reviews micro-badge */
+      .hero-google-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(181, 148, 91, 0.25);
+        border-radius: 50px;
+        padding: 0.5rem 1.25rem;
+        margin-top: 2rem;
+        text-decoration: none;
+        z-index: 12;
+        width: fit-content;
+        box-shadow: 0 4px 15px rgba(171, 143, 109, 0.05);
+        animation: floatAnimation 4s ease-in-out infinite;
+        transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .hero-google-badge:hover {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-color: rgba(181, 148, 91, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .hero-google-badge svg {
+        color: #fbbc05; /* Google Gold */
+        width: 14px;
+        height: 14px;
+      }
+
+      .hero-google-badge span {
+        font-family: var(--font-accent);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--cor-acento);
+      }
+
+      @keyframes floatAnimation {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+
+      /* --- SECTIONS SPACING --- */
+      section {
+        padding: 8rem 0;
+        position: relative;
+      }
+
+      .section-header {
+        max-width: 600px;
+        margin-bottom: 4.5rem;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 300;
+        line-height: 1.2;
+        margin-top: 0.5rem;
+      }
+
+      /* --- SERVIÇOS SECTION --- */
+      #servicos {
+        background-color: var(--cor-fundo);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        padding: 3rem 2.25rem;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .service-icon {
+        color: var(--cor-acento);
+        width: 32px;
+        height: 32px;
+        stroke-width: 1.25;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .service-card:hover {
+        border-color: var(--cor-acento);
+        box-shadow: 0 10px 30px rgba(201, 169, 110, 0.08);
+        transform: translateY(-8px);
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .service-card h3 {
+        font-size: 1.6rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.2;
+      }
+
+      .service-card p {
+        color: var(--cor-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* --- SOBRE / PROPÓSITO --- */
+      #sobre {
+        background-color: #FAF4F0;
+        overflow: hidden;
+      }
+
+      .about-wrapper {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text-column h2 {
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 300;
+        line-height: 1.2;
+        margin: 0.5rem 0 2rem 0;
+      }
+
+      .about-desc {
+        color: var(--cor-muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+
+      .about-bullets {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+      }
+
+      .about-bullet-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.95rem;
+        color: var(--cor-texto);
+      }
+
+      .checkmark-icon {
+        width: 16px;
+        height: 16px;
+        color: var(--cor-acento);
+        flex-shrink: 0;
+      }
+
+      /* Right Column: Giant experiences badge and floating effects */
+      .about-visual-column {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 0;
+      }
+
+      .watermark-container {
+        text-align: center;
+        position: relative;
+        z-index: 5;
+      }
+
+      .giant-num {
+        font-family: var(--font-display);
+        font-size: clamp(140px, 18vw, 220px);
+        font-weight: 300;
+        line-height: 1;
+        color: var(--cor-acento);
+        opacity: 0.15;
+        letter-spacing: -0.03em;
+        text-shadow: 0 0 40px rgba(171, 143, 109, 0.2);
+        display: block;
+        transition: opacity 1.5s ease;
+      }
+
+      .giant-num-label {
+        font-family: var(--font-body);
+        font-size: 1.15rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        color: var(--cor-muted);
+        text-transform: uppercase;
+        margin-top: -1.5rem;
+        display: block;
+      }
+
+      /* Abstract framing around massive watermarked number */
+      .visual-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        height: 320px;
+        border: 1px solid rgba(171, 143, 109, 0.05);
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .visual-frame-2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 270px;
+        height: 270px;
+        border: 1px dashed rgba(171, 143, 109, 0.1);
+        border-radius: 2px;
+        z-index: 2;
+      }
+
+      /* --- DEPOIMENTOS --- */
+      #depoimentos {
+        background-color: var(--cor-fundo);
+        overflow: hidden;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 3.5rem;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        width: 100%;
+      }
+
+      .carousel-card {
+        padding: 1rem;
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      /* 3 visible elements styled dynamically in javascript */
+      .testimonial-box {
+        background-color: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        box-shadow: 0 10px 30px rgba(171, 143, 109, 0.05);
+        border-radius: 4px;
+        padding: 3rem 2.5rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quote-symbol {
+        font-family: var(--font-display);
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--cor-acento);
+        opacity: 0.12;
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+      }
+
+      .test-text {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        color: var(--cor-texto);
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 10;
+        font-style: italic;
+      }
+
+      .test-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1.5rem;
+      }
+
+      .test-author {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: var(--cor-acento-soft);
+      }
+
+      .test-stars {
+        display: flex;
+        gap: 0.2rem;
+        color: var(--cor-acento);
+      }
+
+      .test-stars svg {
+        width: 13px;
+        height: 13px;
+        fill: var(--cor-acento);
+      }
+
+      /* Carousel Controls */
+      .carousel-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .carousel-navigation {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .carousel-arrow {
+        background-color: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cor-texto);
+        transition: all 0.3s ease;
+      }
+
+      .carousel-arrow:hover {
+        border-color: var(--cor-acento);
+        color: var(--cor-acento);
+      }
+
+      .carousel-dots {
+        display: flex;
+        gap: 0.6rem;
+      }
+
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--cor-borda);
+        border: none;
+        padding: 0;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-dot.active {
+        background-color: var(--cor-acento);
+        transform: scale(1.25);
+      }
+
+      /* Social Proof micro-strip below */
+      .carousel-strip {
+        text-align: center;
+        margin-top: 4.5rem;
+        color: var(--cor-muted);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: rgba(181, 148, 91, 0.04);
+        padding: 1rem;
+        border-radius: 40px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px dashed rgba(181, 148, 91, 0.2);
+      }
+
+      .carousel-strip span {
+        color: var(--cor-acento-soft);
+        font-family: var(--font-accent);
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+
+      /* --- LOCALIZAÇÃO & HORÁRIOS --- */
+      #localizacao {
+        background-color: #FAF8F5;
+      }
+
+      .loc-wrapper {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 4rem;
+      }
+
+      .loc-info-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .loc-details {
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .loc-item {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .loc-item-icon {
+        color: var(--cor-acento);
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke-width: 1.5;
+        margin-top: 0.25rem;
+      }
+
+      .loc-item-title {
+        font-family: var(--font-accent);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--cor-acento-soft);
+        margin-bottom: 0.25rem;
+      }
+
+      .loc-item-text {
+        font-size: 0.95rem;
+        color: var(--cor-texto);
+      }
+
+      /* Timeline hours inside localization styling */
+      .hours-card {
+        background-color: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        border-radius: 2px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .hours-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        list-style: none;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      .hours-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .hours-day {
+        font-weight: 400;
+        color: var(--cor-texto);
+      }
+
+      .hours-time {
+        color: var(--cor-muted);
+      }
+
+      .hours-time.highlight {
+        color: var(--cor-acento);
+        font-weight: 400;
+      }
+
+      /* Maps column */
+      .loc-map-column {
+        position: relative;
+        width: 100%;
+        min-height: 420px;
+      }
+
+      .map-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--cor-borda);
+        border-radius: 4px;
+        filter: grayscale(0.9) contrast(1.05); /* Elegant Silver map */
+        -webkit-filter: grayscale(0.9) contrast(1.05);
+        opacity: 0.85;
+        transition: opacity 0.4s ease, filter 0.4s ease;
+      }
+
+      .map-iframe:hover {
+        opacity: 1;
+        filter: grayscale(0.2) invert(0) contrast(1);
+        -webkit-filter: grayscale(0.2) invert(0) contrast(1);
+      }
+
+      /* --- CTA FINAL --- */
+      #cta-final {
+        background: linear-gradient(180deg, var(--cor-fundo) 0%, rgba(171, 143, 109, 0.05) 100%);
+        padding: 10rem 0;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 650px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .cta-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.1;
+      }
+
+      .cta-desc {
+        font-size: 1.1rem;
+        color: var(--cor-muted);
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background-color: #FAF6F2;
+        border-top: 1px solid var(--cor-borda);
+        padding: 5rem 0 3rem 0;
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .footer-desc {
+        color: var(--cor-muted);
+        font-size: 0.9rem;
+        max-width: 320px;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+
+      .footer-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+      }
+
+      .footer-nav-link {
+        font-family: var(--font-accent);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--cor-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-nav-link:hover {
+        color: var(--cor-acento);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        font-size: 0.8rem;
+        color: var(--cor-muted);
+      }
+
+      .footer-love {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .love-heart {
+        width: 12px;
+        height: 12px;
+        color: var(--cor-acento);
+        fill: var(--cor-acento);
+      }
+
+      .footer-whatsapp-link {
+        color: var(--cor-acento);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+
+      .footer-whatsapp-link:hover {
+        text-decoration: underline;
+      }
+
+      /* --- NAV-DRAWER (MOBILE) --- */
+      .nav-drawer {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100%;
+        background-color: var(--cor-superficie);
+        z-index: 1001;
+        padding: 6rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        border-left: 1px solid rgba(201, 169, 110, 0.1);
+      }
+
+      .nav-drawer.active {
+        right: 0;
+      }
+
+      .drawer-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--cor-texto);
+        padding: 0.5rem;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .drawer-close:active {
+        background-color: rgba(171, 143, 109, 0.08);
+        transform: scale(0.95);
+      }
+
+      .drawer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .drawer-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+      }
+
+      .drawer-backdrop.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* --- OTHER STYLES --- */
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--cor-fundo);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #E0D3C1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--cor-acento);
+      }
+
+      /* Cursor elements */
+      .custom-cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: var(--cor-acento);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        display: block;
+      }
+
+      .custom-cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border: 1.5px solid var(--cor-acento);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.4;
+        display: block;
+      }
+
+      .custom-cursor-ring.hovered {
+        width: 60px;
+        height: 60px;
+        opacity: 0.8;
+        background-color: rgba(201, 169, 110, 0.1);
+      }
+
+      /* --- FLOATING WHATSAPP BUTTON --- */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background-color: #25D366;
+        color: #FFFFFF !important;
+        padding: 0.85rem 1.5rem;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        animation: whatsapp-fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20BA5A;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(37, 211, 102, 0.45);
+        color: #FFFFFF !important;
+      }
+
+      .whatsapp-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* Pulse Ring Layer */
+      .whatsapp-float::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        border: 2px solid #25D366;
+        z-index: -1;
+        opacity: 0;
+        animation: whatsapp-pulse 2.2s infinite;
+        transition: border-color 0.3s ease;
+      }
+
+      .whatsapp-float:hover::before {
+        border-color: #20BA5A;
+      }
+
+      @keyframes whatsapp-pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.75;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1.3);
+          opacity: 0;
+        }
+      }
+
+      @keyframes whatsapp-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .whatsapp-text {
+        font-family: var(--font-accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.75rem;
+      }
+
+      /* --- MEDIAS QUERIES --- */
+      @media (max-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .about-wrapper {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .loc-wrapper {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .loc-map-column {
+          min-height: 350px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #hero {
+          background-image: linear-gradient(to bottom, rgba(252, 250, 248, 0.98) 25%, rgba(252, 250, 248, 0.92) 80%, rgba(252, 250, 248, 0.85) 100%), url('/src/assets/images/beauty_studio_bg_1781205138416.jpg');
+          background-position: center center;
+        }
+
+        #hero .eyebrow {
+          font-size: 0.68rem;
+          letter-spacing: 0.25em;
+        }
+
+        .hero-content {
+          text-align: center;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-headline {
+          font-size: 3.8rem;
+          text-align: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-google-badge {
+          align-self: center;
+        }
+
+        body {
+          cursor: auto !important;
+        }
+        a, button {
+          cursor: auto !important;
+        }
+        .custom-cursor-dot, .custom-cursor-ring {
+          display: none !important;
+        }
+        
+        section {
+          padding: 5rem 0;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-toggle {
+          display: flex;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .footer-nav {
+          justify-content: flex-start;
+        }
+
+        .about-visual-column {
+          padding: 2rem 0;
+        }
+
+        .whatsapp-float {
+          bottom: 1.5rem;
+          right: 1.5rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          padding: 0;
+          justify-content: center;
+          border-radius: 50%;
+        }
+
+        .whatsapp-float .whatsapp-text {
+          display: none;
+        }
+
+        .whatsapp-float::before {
+          border-radius: 50%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #hero .eyebrow {
+          font-size: 0.62rem;
+          letter-spacing: 0.2em;
+        }
+        .hero-headline {
+          font-size: 3.4rem;
+        }
+        section {
+          padding: 4.5rem 0;
+        }
+        .section-header {
+          margin-bottom: 2.5rem;
+        }
+        .hero-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+        .hero-actions .btn,
+        .cta-content .btn {
+          width: 100%;
+          font-size: 0.65rem;
+          padding: 0.8rem 1rem;
+          white-space: nowrap;
+          letter-spacing: 0.1em;
+          gap: 0.5rem;
+        }
+        .hero-google-badge {
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+          animation: none;
+          box-shadow: 0 4px 12px rgba(171, 143, 109, 0.08);
+          align-self: center;
+        }
+        .visual-frame {
+          width: 250px;
+          height: 250px;
+        }
+        .visual-frame-2 {
+          width: 210px;
+          height: 210px;
+        }
+        .service-card {
+          padding: 2.25rem 1.5rem;
+          gap: 1.25rem;
+        }
+        .testimonial-box {
+          padding: 2.25rem 1.5rem;
+        }
+        .hours-card {
+          padding: 1.5rem 1.25rem;
+        }
+        .loc-map-column {
+          min-height: 280px;
+        }
+        .about-bullets {
+          gap: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+    <!-- NAVBAR / HEADER -->
+    <header id="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <!-- Flower SVG inline code -->
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke-dasharray="1 3" />
+            <path d="M12 6a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="currentColor"/>
+            <path d="M12 12c-2 0-4-1-4-3s2-3 4-3 4 1 4 3-2 3-4 3z" />
+            <path d="M12 12c0 2-1 4-3 4s-3-2-3-4 1-4 3-4 3 2 3 4z" />
+            <path d="M12 12c2 0 4 1 4 3s-2 3-4 3-4-1-4-3 2-3 4-3z" />
+            <path d="M12 12c0-2 1-4 3-4s3 2 3 4-1 4-3 4-3-2-3-4z" />
+          </svg>
+          <span class="logo-text">Studio Fátima Dias</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#localizacao" class="nav-link">Contato</a></li>
+          <li><a href="https://wa.me/5519998157176" class="btn btn-nav" target="_blank" rel="noopener">Agendar Agora</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="menu-btn" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV DRAWER -->
+    <div class="drawer-backdrop" id="drawer-shadow"></div>
+    <div class="nav-drawer" id="mobile-drawer">
+      <button class="drawer-close" id="drawer-close-btn" aria-label="Fechar Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="drawer-links">
+        <li><a href="#servicos" class="nav-link drawer-item-link">Serviços</a></li>
+        <li><a href="#sobre" class="nav-link drawer-item-link">Sobre</a></li>
+        <li><a href="#depoimentos" class="nav-link drawer-item-link">Depoimentos</a></li>
+        <li><a href="#localizacao" class="nav-link drawer-item-link">Contato</a></li>
+        <li style="margin-top: 2rem;"><a href="https://wa.me/5519998157176" class="btn btn-primary" style="width: 100%;" target="_blank" rel="noopener">Agendar Agora</a></li>
+      </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow reveal" data-delay="0">✦ Campinas, SP · Há mais de 20 anos</span>
+          
+          <h1 class="hero-headline reveal" data-delay="150">
+            Beleza que<br>
+            <span class="reveal-underline inline-block"><italic-word>transforma.</italic-word></span>
+          </h1>
+
+          <p class="hero-description reveal" data-delay="300">
+            Depilação especializada e transformação capilar para a mulher que valoriza cuidado de verdade. Profissionalismo e dedicação esculpidos em cada detalhe.
+          </p>
+
+          <div class="hero-actions reveal" data-delay="450">
+            <a href="https://wa.me/5519998157176" class="btn btn-primary" target="_blank" rel="noopener">
+              <!-- WhatsApp icon SVG -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.3-.149-1.777-.878-2.046-.976-.27-.099-.467-.149-.662.153-.195.3-.755.953-.925 1.144-.171.192-.34.21-.64.062a9.185 9.185 0 0 1-2.368-1.458 9.76 9.76 0 0 1-1.642-2.045c-.2-.338-.02-.52.149-.688.13-.13.3-.35.45-.525.136-.17.18-.28.27-.468.09-.187.045-.353-.022-.5-.068-.15-.662-1.597-.903-2.179-.243-.586-.486-.508-.662-.516-.17-.008-.363-.01-.557-.01-.194 0-.512.072-.78.364-.269.292-1.025 1.002-1.025 2.445 0 1.442 1.05 2.84 1.196 3.037.146.197 2.067 3.16 5.006 4.43.7.3 1.246.48 1.672.616.702.223 1.342.192 1.849.117.564-.084 1.777-.727 2.027-1.428.25-.7.25-1.3.175-1.428-.076-.128-.277-.205-.577-.354v-.001zm-5.428 7.42a9.882 9.882 0 0 1-5.019-1.365l-.36-.214-3.733.98 1 .963-.244-.374a9.855 9.855 0 0 1-1.385-5.005C2.316 6.136 6.666 1.785 12.006 1.785c2.585 0 5.016 1.006 6.84 2.83 1.826 1.82 2.83 4.25 2.83 6.84 0 5.341-4.35 9.691-9.692 9.691l-.105-.004zm0-21.006C5.584.796.386 5.993.386 12.35c0 2.024.52 4.01 1.517 5.76L0 24l5.986-1.57a11.91 11.91 0 0 0 5.966 1.571c6.368 0 11.564-5.195 11.564-11.55 0-3.08-1.198-5.975-3.376-8.156A11.498 11.498 0 0 0 12.04.794h-.002z"/>
+              </svg>
+              Agendar Pelo WhatsApp
+            </a>
+            <a href="#servicos" class="btn btn-outline">Ver Serviços</a>
+          </div>
+
+          <!-- Discreto Google Star Badge -->
+          <a href="https://maps.app.goo.gl/9bN6P6Wp1b1Xv1Xv1" class="hero-google-badge reveal" data-delay="550" target="_blank" rel="noopener">
+            <!-- Star SVG -->
+            <svg fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+            <span>4,4 no Google · 47 avaliações</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS SECTION -->
+    <section id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow reveal" data-delay="0">Serviços</span>
+          <h2 class="section-title reveal-underline reveal" data-delay="100">O que fazemos</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card reveal" data-delay="0">
+            <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M12 12m-9 0a9 9 0 1 1 18 0 9 9 0 0 1-18 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6H12z" />
+            </svg>
+            <h3>Depilação Feminina</h3>
+            <p>Especialidade consagrada da casa há mais de duas décadas. Técnica refinada, com cera desenvolvida para minimizar o desconforto e garantir uma pele extremamente macia e saudável.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card reveal" data-delay="100">
+            <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25M9.75 14.25L7.5 12l2.25-2.25M12 3v18" />
+              <p fill="none" stroke="currentColor" d="M6 18c0-3 2-4.5 6-4.5s6 1.5 6 4.5" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18h12M9 12c.5-1 1.5-2 3-2s2.5 1 3 2" />
+            </svg>
+            <h3>Corte & Finalização</h3>
+            <p>Cortes modernos que dialogam perfeitamente com seu estilo de vida e valorizam a arquitetura do seu rosto. Finalização suave de nível profissional.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card reveal" data-delay="200">
+            <svg class="service-icon" stroke="currentColor" stroke-width="1.5" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-1.245c0-.756-.224-1.46-.62-2.128zm0 0a15.998 15.998 0 003.388-1.62m-1.21-1.21a15.976 15.976 0 00-2.178 2.83m6.146-2.193a15.972 15.972 0 00-2.178-2.83m0 0l-3.388 1.62" />
+              <circle cx="15.5" cy="8.5" r="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h3>Coloração</h3>
+            <p>Do retoque clássico de raiz a mudanças completas de nuance. Utilizamos produtos que preservam a integridade e brilho do fio de cabelo com resultados duradouros.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card reveal" data-delay="300">
+            <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c-4.42 0-8 3.58-8 8h16c0-4.42-3.58-8-8-8z" />
+            </svg>
+            <h3>Sobrancelhas</h3>
+            <p>Design de sobrancelha personalizado que valoriza, emoldura e destaca a graça do seu olhar, respeitando as proporções naturais de sua beleza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE / PROPÓSITO -->
+    <section id="sobre">
+      <div class="container">
+        <div class="about-wrapper">
+          
+          <div class="about-text-column">
+            <span class="eyebrow reveal" data-delay="0">Sobre Nós</span>
+            <h2 class="reveal" data-delay="100">Mais de duas décadas dedicadas à sua beleza</h2>
+            
+            <p class="about-desc reveal" data-delay="200">
+              O Studio Fátima Dias nasceu de um propósito genuíno: criar um santuário de refinamento e autocuidado feminino em Campinas/SP. Liderado por Fátima Dias, especialista com mais de 20 anos no ramo de depilação feminina e tratamentos capilares estruturados, o estúdio é amplamente elogiado pela excelência e cordialidade.
+            </p>
+            <p class="about-desc reveal" data-delay="250">
+              Aqui, cada cliente é acolhida em um ambiente íntimo, refinado, confortável e planejado para que sua visita se converta em um rito de relaxamento e empoderamento.
+            </p>
+
+            <ul class="about-bullets reveal" data-delay="350">
+              <li class="about-bullet-item">
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Profissionais altamente experientes e atenciosas</span>
+              </li>
+              <li class="about-bullet-item">
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Ambiente acolhedor, privativo e climatizado</span>
+              </li>
+              <li class="about-bullet-item">
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Atendimento personalizado e produtos de marcas consagradas</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-visual-column reveal" id="about-visual-block" data-delay="200">
+            <div class="visual-frame"></div>
+            <div class="visual-frame-2"></div>
+            <div class="watermark-container">
+              <span class="giant-num" id="experience-counter">0+</span>
+              <span class="giant-num-label">Anos de Experiência</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="eyebrow reveal" data-delay="0">Depoimentos</span>
+          <h2 class="section-title reveal-underline reveal" data-delay="100">O que dizem nossas clientes</h2>
+        </div>
+
+        <div class="carousel-container reveal" data-delay="200" id="carousel-outer">
+          <div class="carousel-track" id="testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="carousel-card">
+              <div class="testimonial-box">
+                <span class="quote-symbol">“</span>
+                <p class="test-text">"Trabalho excelente de todas profissionais do salão. Fátima é sensacional no trato e no profissionalismo!"</p>
+                <div class="test-meta">
+                  <span class="test-author">Mariana S.</span>
+                  <div class="test-stars">
+                    <!-- 5 golden stars SVG -->
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="carousel-card">
+              <div class="testimonial-box">
+                <span class="quote-symbol">“</span>
+                <p class="test-text">"Corto cabelo e faço depilação há anos com a Fátima. O capricho dela e cuidado são insubstituíveis."</p>
+                <div class="test-meta">
+                  <span class="test-author">Claudia R.</span>
+                  <div class="test-stars">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="carousel-card">
+              <div class="testimonial-box">
+                <span class="quote-symbol">“</span>
+                <p class="test-text">"Tenho amado o ambiente! É super limpo, agradável, nos sentimos em um spa de beleza realmente premium!"</p>
+                <div class="test-meta">
+                  <span class="test-author">Patrícia M.</span>
+                  <div class="test-stars">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="carousel-card">
+              <div class="testimonial-box">
+                <span class="quote-symbol">“</span>
+                <p class="test-text">"Espaço acolhedor e depilação perfeita. Com certeza indico para todas as minhas amigas em Campinas."</p>
+                <div class="test-meta">
+                  <span class="test-author">Juliana F.</span>
+                  <div class="test-stars">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="carousel-card">
+              <div class="testimonial-box">
+                <span class="quote-symbol">“</span>
+                <p class="test-text">"Incrível o trabalho capilar! Meus cabelos estavam muito sem brilho e as hidratações da Fátima devolveram a vida aos fios."</p>
+                <div class="test-meta">
+                  <span class="test-author">Amanda L.</span>
+                  <div class="test-stars">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-footer reveal" data-delay="100">
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <div class="carousel-navigation">
+            <button class="carousel-arrow" id="carousel-prev" aria-label="Depoimento Anterior">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button class="carousel-arrow" id="carousel-next" aria-label="Próximo Depoimento">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-strip reveal" data-delay="300">
+          <span>⭐ 4,4 · 47 avaliações no Google Maps</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO & HORÁRIOS -->
+    <section id="localizacao">
+      <div class="container">
+        <div class="loc-wrapper">
+          
+          <div class="loc-info-column reveal" data-delay="100">
+            <span class="eyebrow">Localização & Horários</span>
+            <h2 class="section-title" style="margin-bottom: 2rem;">Nos encontre</h2>
+
+            <div class="hours-card">
+              <ul class="hours-list">
+                <li class="hours-row">
+                  <span class="hours-day">Segunda a Sexta</span>
+                  <span class="hours-time">09:00 — 19:00</span>
+                </li>
+                <li class="hours-row">
+                  <span class="hours-day">Sábado</span>
+                  <span class="hours-time highlight">09:00 — 17:00</span>
+                </li>
+                <li class="hours-row">
+                  <span class="hours-day">Domingo</span>
+                  <span class="hours-time">Fechado</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="loc-details">
+              <div class="loc-item">
+                <svg class="loc-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <h4 class="loc-item-title">Endereço</h4>
+                  <p class="loc-item-text">Rua Luiz Libermann, 725 - Jardim Pauliceia, Campinas - SP, 13060-190</p>
+                </div>
+              </div>
+
+              <div class="loc-item">
+                <svg class="loc-item-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <div>
+                  <h4 class="loc-item-title">WhatsApp / Telefone</h4>
+                  <p class="loc-item-text">(19) 99815-7176</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://www.google.com/maps?q=Rua+Luiz+Libermann,+725+-+Jardim+Pauliceia,+Campinas+-+SP,+13060-190" target="_blank" rel="noopener" class="btn btn-outline" style="align-self: flex-start;">
+              Como Chegar no Maps
+            </a>
+          </div>
+
+          <div class="loc-map-column reveal" data-delay="300">
+            <!-- Google Maps elegant stylized integration iframe -->
+            <iframe 
+              class="map-iframe"
+              src="https://maps.google.com/maps?q=Rua%20Luiz%20Libermann,%20725%20-%20Jardim%20Pauliceia,%20Campinas%20-%20SP,%2013060-190&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final">
+      <div class="container">
+        <div class="cta-content">
+          <span class="eyebrow reveal" data-delay="0">Inicie Sua Transformação</span>
+          <h2 class="cta-title reveal" data-delay="100">Pronta para se cuidar?</h2>
+          <p class="cta-desc reveal" data-delay="200">
+            Agende seu horário com quem possui mais de 20 anos de excelência no assunto em Campinas. Venha viver um atendimento sob medida e revitalizar sua autoestima.
+          </p>
+          <a href="https://wa.me/5519998157176" class="btn btn-primary btn-lg reveal" data-delay="300" target="_blank" rel="noopener">
+            <!-- WhatsApp Logo SVG -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.3-.149-1.777-.878-2.046-.976-.27-.099-.467-.149-.662.153-.195.3-.755.953-.925 1.144-.171.192-.34.21-.64.062a9.185 9.185 0 0 1-2.368-1.458 9.76 9.76 0 0 1-1.642-2.045c-.2-.338-.02-.52.149-.688.13-.13.3-.35.45-.525.136-.17.18-.28.27-.468.09-.187.045-.353-.022-.5-.068-.15-.662-1.597-.903-2.179-.243-.586-.486-.508-.662-.516-.17-.008-.363-.01-.557-.01-.194 0-.512.072-.78.364-.269.292-1.025 1.002-1.025 2.445 0 1.442 1.05 2.84 1.196 3.037.146.197 2.067 3.16 5.006 4.43.7.3 1.246.48 1.672.616.702.223 1.342.192 1.849.117.564-.084 1.777-.727 2.027-1.428.25-.7.25-1.3.175-1.428-.076-.128-.277-.205-.577-.354v-.001zm-5.428 7.42a9.882 9.882 0 0 1-5.019-1.365l-.36-.214-3.733.98 1 .963-.244-.374a9.855 9.855 0 0 1-1.385-5.005C2.316 6.136 6.666 1.785 12.006 1.785c2.585 0 5.016 1.006 6.84 2.83 1.826 1.82 2.83 4.25 2.83 6.84 0 5.341-4.35 9.691-9.692 9.691l-.105-.004zm0-21.006C5.584.796.386 5.993.386 12.35c0 2.024.52 4.01 1.517 5.76L0 24l5.986-1.57a11.91 11.91 0 0 0 5.966 1.571c6.368 0 11.564-5.195 11.564-11.55 0-3.08-1.198-5.975-3.376-8.156A11.498 11.498 0 0 0 12.04.794h-.002z"/>
+            </svg>
+            Agendar Via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" stroke-dasharray="1 3"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+              </svg>
+              <span class="logo-text">Studio Fátima Dias</span>
+            </a>
+            <p class="footer-desc">
+              Especialista em depilação feminina certificada e tratamentos capilares personalizados. Transformando energia e resgatando autoestimas há mais de 20 anos em Campinas.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <ul class="footer-nav-list">
+              <li><a href="#servicos" class="footer-nav-link">Serviços</a></li>
+              <li><a href="#sobre" class="footer-nav-link">Sobre</a></li>
+              <li><a href="#depoimentos" class="footer-nav-link">Depoimentos</a></li>
+              <li><a href="#localizacao" class="footer-nav-link">Contato & Horários</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            © 2026 Studio Fátima Dias · Todos os direitos reservados.
+          </div>
+          <div class="footer-love">
+            Feito com carinho em Campinas, SP 
+            <svg class="love-heart" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div>
+            Fale Direto no <a href="https://wa.me/5519998157176" class="footer-whatsapp-link" target="_blank" rel="noopener">(19) 99815-7176</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5519998157176" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      <div class="whatsapp-icon-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.3-.149-1.777-.878-2.046-.976-.27-.099-.467-.149-.662.153-.195.3-.755.953-.925 1.144-.171.192-.34.21-.64.062a9.185 9.185 0 0 1-2.368-1.458 9.76 9.76 0 0 1-1.642-2.045c-.2-.338-.02-.52.149-.688.13-.13.3-.35.45-.525.136-.17.18-.28.27-.468.09-.187.045-.353-.022-.5-.068-.15-.662-1.597-.903-2.179-.243-.586-.486-.508-.662-.516-.17-.008-.363-.01-.557-.01-.194 0-.512.072-.78.364-.269.292-1.025 1.002-1.025 2.445 0 1.442 1.05 2.84 1.196 3.037.146.197 2.067 3.16 5.006 4.43.7.3 1.246.48 1.672.616.702.223 1.342.192 1.849.117.564-.084 1.777-.727 2.027-1.428.25-.7.25-1.3.175-1.428-.076-.128-.277-.205-.577-.354v-.001zm-5.428 7.42a9.882 9.882 0 0 1-5.019-1.365l-.36-.214-3.733.98 1 .963-.244-.374a9.855 9.855 0 0 1-1.385-5.005C2.316 6.136 6.666 1.785 12.006 1.785c2.585 0 5.016 1.006 6.84 2.83 1.826 1.82 2.83 4.25 2.83 6.84 0 5.341-4.35 9.691-9.692 9.691l-.105-.004zm0-21.006C5.584.796.386 5.993.386 12.35c0 2.024.52 4.01 1.517 5.76L0 24l5.986-1.57a11.91 11.91 0 0 0 5.966 1.571c6.368 0 11.564-5.195 11.564-11.55 0-3.08-1.198-5.975-3.376-8.156A11.498 11.498 0 0 0 12.04.794h-.002z"/>
+        </svg>
+      </div>
+      <span class="whatsapp-text">Fale Conosco</span>
+    </a>
+
+    <!-- JS EFFECTS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // --- PREFERS REDUCED MOTION CHECK ---
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // --- MOBILE NAV DRAWER NAVIGATION ---
+        const menuBtn = document.getElementById('menu-btn');
+        const drawerCloseBtn = document.getElementById('drawer-close-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const drawerShadow = document.getElementById('drawer-shadow');
+        const drawerItemLinks = document.querySelectorAll('.drawer-item-link');
+
+        function toggleDrawer(isOpen) {
+          if (isOpen) {
+            mobileDrawer.classList.add('active');
+            drawerShadow.classList.add('active');
+          } else {
+            mobileDrawer.classList.remove('active');
+            drawerShadow.classList.remove('active');
+          }
+        }
+
+        if (menuBtn && mobileDrawer && drawerShadow) {
+          menuBtn.addEventListener('click', () => toggleDrawer(true));
+          drawerCloseBtn.addEventListener('click', () => toggleDrawer(false));
+          drawerShadow.addEventListener('click', () => toggleDrawer(false));
+          
+          drawerItemLinks.forEach(link => {
+            link.addEventListener('click', () => toggleDrawer(false));
+          });
+        }
+
+        // --- NAVBAR INTELLIGENTE ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 80) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // --- CUSTOM CURSOR ENGINE (VANILLA LERP) ---
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+        
+        let mouseX = 0, mouseY = 0;
+        let dotX = 0, dotY = 0;
+        let ringX = 0, ringY = 0;
+        
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+        if (!isTouchDevice && !prefersReducedMotion && cursorDot && cursorRing) {
+          window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          });
+
+          // Soft interpolation function for trailing ring effect
+          const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+
+          function updateCursor() {
+            dotX = mouseX;
+            dotY = mouseY;
+            
+            ringX = lerp(ringX, mouseX, 0.08);
+            ringY = lerp(ringY, mouseY, 0.08);
+
+            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+            cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+
+            requestAnimationFrame(updateCursor);
+          }
+          requestAnimationFrame(updateCursor);
+
+          // Handle button and link hover feedback
+          const hoverableItems = document.querySelectorAll('a, button, .service-card, .carousel-arrow, .carousel-dot');
+          hoverableItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+              cursorRing.classList.add('hovered');
+            });
+            item.addEventListener('mouseleave', () => {
+              cursorRing.classList.remove('hovered');
+            });
+          });
+        } else {
+          // Hide completely for phones and reduced-motion environments
+          if (cursorDot) cursorDot.style.display = 'none';
+          if (cursorRing) cursorRing.style.display = 'none';
+          document.body.style.cursor = 'auto';
+        }
+
+        // --- HERO CANVAS PARTICLES ENGINE ---
+        const canvas = document.getElementById('hero-canvas');
+        if (canvas && !isTouchDevice && !prefersReducedMotion) {
+          const ctx = canvas.getContext('2d');
+          let particles = [];
+          
+          function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+          }
+          
+          window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+          });
+          resizeCanvas();
+
+          class Particle {
+            constructor() {
+              this.x = Math.random() * canvas.width;
+              this.y = Math.random() * canvas.height;
+              this.size = Math.random() * 1.5 + 0.6;
+              this.speedX = (Math.random() - 0.5) * 0.12; 
+              this.speedY = (Math.random() - 0.5) * 0.12; 
+              this.opacity = Math.random() * 0.35 + 0.15;
+            }
+
+            update() {
+              this.x += this.speedX;
+              this.y += this.speedY;
+
+              if (this.x < 0) this.x = canvas.width;
+              if (this.x > canvas.width) this.x = 0;
+              if (this.y < 0) this.y = canvas.height;
+              if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(171, 143, 109, ${this.opacity})`;
+              ctx.fill();
+            }
+          }
+
+          function initParticles() {
+            particles = [];
+            const particleCount = 42;
+            for (let i = 0; i < particleCount; i++) {
+              particles.push(new Particle());
+            }
+          }
+          initParticles();
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+              p.update();
+              p.draw();
+            });
+            requestAnimationFrame(animate);
+          }
+          animate();
+        }
+
+        // --- SCROLL REVEAL & UNDERLINE REVEAL (INTERSECTION OBSERVER) ---
+        const revealElements = document.querySelectorAll('.reveal, .reveal-underline');
+        
+        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+          const runRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Handle delay on scrolls
+                const delay = entry.target.getAttribute('data-delay') || 0;
+                setTimeout(() => {
+                  entry.target.classList.add('active');
+                }, delay);
+
+                // If about section trigger experience counter animation
+                if (entry.target.id === 'about-visual-block') {
+                  animateExperienceCounter();
+                }
+              }
+            });
+          }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+          });
+
+          revealElements.forEach(el => {
+            runRevealObserver.observe(el);
+          });
+        } else {
+          // If reduced motion is turned on, instantly activate elements
+          revealElements.forEach(el => el.classList.add('active'));
+          animateExperienceCounter(); // Run normally
+        }
+
+        // --- 20+ YEARS ANIMATED EXPERIENCE COUNTER ---
+        let experienceCounterStarted = false;
+        function animateExperienceCounter() {
+          const counterEl = document.getElementById('experience-counter');
+          if (!counterEl || experienceCounterStarted) return;
+          experienceCounterStarted = true;
+
+          let start = 0;
+          const target = 20;
+          const duration = 1800;
+          const stepTime = Math.abs(Math.floor(duration / target));
+
+          const timer = setInterval(() => {
+            start += 1;
+            counterEl.textContent = `${start}+`;
+            if (start >= target) {
+              clearInterval(timer);
+            }
+          }, stepTime);
+        }
+
+        // --- HORIZONTAL SLIDER / CAROUSEL TESTIMONIALS ---
+        const track = document.getElementById('testimonials-track');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        const dotsContainer = document.getElementById('carousel-dots');
+        
+        if (track && dotsContainer && prevBtn && nextBtn) {
+          const cardsRef = Array.from(track.children);
+          let currentSliderIndex = 0;
+          let autoplayTimer = null;
+
+          function getCardsPerView() {
+            return window.innerWidth < 768 ? 1 : 3;
+          }
+
+          function getStepWidthPercent() {
+            return 100 / getCardsPerView();
+          }
+
+          function getMaxSliderIndex() {
+            return Math.max(0, cardsRef.length - getCardsPerView());
+          }
+
+          function updateSliderPosition() {
+            const step = getStepWidthPercent();
+            track.style.transform = `translate3d(-${currentSliderIndex * step}%, 0, 0)`;
+            renderDots();
+          }
+
+          function renderDots() {
+            dotsContainer.innerHTML = '';
+            const maxIndex = getMaxSliderIndex();
+            
+            for (let i = 0; i <= maxIndex; i++) {
+              const dot = document.createElement('button');
+              dot.classList.add('carousel-dot');
+              if (i === currentSliderIndex) dot.classList.add('active');
+              dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
+              dot.addEventListener('click', () => {
+                currentSliderIndex = i;
+                updateSliderPosition();
+                restartAutoplay();
+              });
+              dotsContainer.appendChild(dot);
+            }
+          }
+
+          function slideNext() {
+            const maxIndex = getMaxSliderIndex();
+            if (currentSliderIndex < maxIndex) {
+              currentSliderIndex++;
+            } else {
+              currentSliderIndex = 0; // wrap around
+            }
+            updateSliderPosition();
+          }
+
+          function slidePrev() {
+            if (currentSliderIndex > 0) {
+              currentSliderIndex--;
+            } else {
+              currentSliderIndex = getMaxSliderIndex(); // wrap around
+            }
+            updateSliderPosition();
+          }
+
+          nextBtn.addEventListener('click', () => {
+            slideNext();
+            restartAutoplay();
+          });
+
+          prevBtn.addEventListener('click', () => {
+            slidePrev();
+            restartAutoplay();
+          });
+
+          // Handle Touch Swipe Events
+          let startTouchX = 0;
+          let endTouchX = 0;
+
+          track.addEventListener('touchstart', (e) => {
+            startTouchX = e.touches[0].clientX;
+            stopAutoplay();
+          }, { passive: true });
+
+          track.addEventListener('touchend', (e) => {
+            endTouchX = e.changedTouches[0].clientX;
+            const diff = startTouchX - endTouchX;
+            if (diff > 50) {
+              slideNext(); // Swiped left
+            } else if (diff < -50) {
+              slidePrev(); // Swiped right
+            }
+            restartAutoplay();
+          }, { passive: true });
+
+          // Autoplay Management
+          function startAutoplay() {
+            if (prefersReducedMotion) return;
+            autoplayTimer = setInterval(slideNext, 4000);
+          }
+
+          function stopAutoplay() {
+            if (autoplayTimer) {
+              clearInterval(autoplayTimer);
+              autoplayTimer = null;
+            }
+          }
+
+          function restartAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+          }
+
+          // Pause on hover
+          const carouselOuter = document.getElementById('carousel-outer');
+          if (carouselOuter) {
+            carouselOuter.addEventListener('mouseenter', stopAutoplay);
+            carouselOuter.addEventListener('mouseleave', startAutoplay);
+          }
+
+          // Initial calls
+          window.addEventListener('resize', () => {
+            // Recalculate slider sizing to prevent layout overflow errors
+            const maxIndex = getMaxSliderIndex();
+            if (currentSliderIndex > maxIndex) {
+              currentSliderIndex = maxIndex;
+            }
+            updateSliderPosition();
+          });
+
+          // Adjust layout width of individual cards based on viewport
+          function styleCarouselCards() {
+            const itemsPerView = getCardsPerView();
+            cardsRef.forEach(card => {
+              card.style.width = `${100 / itemsPerView}%`;
+            });
+          }
+          
+          window.addEventListener('resize', styleCarouselCards);
+          styleCarouselCards();
+          updateSliderPosition();
+          startAutoplay();
+        }
+
+      });
+    </script>
+  </body>
+</html>
